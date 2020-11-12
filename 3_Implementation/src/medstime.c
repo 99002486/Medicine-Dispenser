@@ -1,7 +1,5 @@
-#include<stdio.h> 
-#include<stdlib.h> 
-#include<string.h> 
-#include<time.h>
+#include "medstime.h"
+
 int readCSVData(char *buff, char *tim);
 
 int medCheck(void)
