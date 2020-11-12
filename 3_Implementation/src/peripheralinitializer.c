@@ -4,15 +4,24 @@
 peripherals_t peripheralinit(void)
 {
     peripherals_t p1;
-    FILE *pirddr,*outddr,*motorddr;
+    FILE *pirddr,*gledddr,*rledddr,*motorout1ddr,*motorout2ddr;
     pirddr=fopen("/sys/class/gpio/gpio60/direction","w");
-    outddr=fopen("/sys/class/gpio/gpio48/direction","w");
+    gledddr=fopen("/sys/class/gpio/gpio48/direction","w");
+    rledddr=fopen("/sys/class/gpio/gpio48/direction","w");
+    motorout1ddr=fopen("/sys/class/gpio/gpio48/direction","w");
+    motorout2ddr=fopen("/sys/class/gpio/gpio48/direction","w");
 
     peripheral_setin(pirddr);
-    peripheral_setout(outddr);
+    peripheral_setout(gledddr);
+    peripheral_setout(rledddr);
+    peripheral_setout(motorout1ddr);
+    peripheral_setout(motorout2ddr);
 
     p1.pir=fopen("/sys/class/gpio/gpio60/value","r");
-    p1.out=fopen("/sys/class/gpio/gpio48/value","w");
+    p1.gled=fopen("/sys/class/gpio/gpio48/value","w");
+    p1.rled=fopen("/sys/class/gpio/gpio49/value","w");
+    p1.motorout1=fopen("/sys/class/gpio/gpio44/value","w");
+    p1.motorout2=fopen("/sys/class/gpio/gpio26/value","w");
 
     return p1;
 }
