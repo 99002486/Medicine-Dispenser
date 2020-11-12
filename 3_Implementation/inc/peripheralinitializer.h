@@ -6,9 +6,10 @@
 typedef struct peripherals
 {
     FILE* pir;
-    FILE* out;
-    FILE* SPI;
-    FILE* motor;
+    FILE* rled;
+    FILE* gled;
+    FILE* motorout1;
+    FILE* motorout2;
 } peripherals_t;
 
 int peripheralsinit(void);
