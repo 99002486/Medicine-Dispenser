@@ -12,7 +12,7 @@ typedef struct peripherals
     FILE* motorout2;
 } peripherals_t;
 
-int peripheralsinit(void);
+peripherals_t peripheralsinit(void);
 
 int peripheral_setout(FILE* peripheral_ddr);
 
