@@ -7,9 +7,9 @@ peripherals_t peripheralinit(void)
     FILE *pirddr,*gledddr,*rledddr,*motorout1ddr,*motorout2ddr;
     pirddr=fopen("/sys/class/gpio/gpio60/direction","w");
     gledddr=fopen("/sys/class/gpio/gpio48/direction","w");
-    rledddr=fopen("/sys/class/gpio/gpio48/direction","w");
-    motorout1ddr=fopen("/sys/class/gpio/gpio48/direction","w");
-    motorout2ddr=fopen("/sys/class/gpio/gpio48/direction","w");
+    rledddr=fopen("/sys/class/gpio/gpio49/direction","w");
+    motorout1ddr=fopen("/sys/class/gpio/gpio44/direction","w");
+    motorout2ddr=fopen("/sys/class/gpio/gpio26/direction","w");
 
     peripheral_setin(pirddr);
     peripheral_setout(gledddr);
