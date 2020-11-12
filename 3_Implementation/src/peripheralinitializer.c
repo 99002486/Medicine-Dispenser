@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "peripheralinitializer.h"
 
-peripherals_t peripheralinit(void)
+int peripheralinit(void)
 {
     peripherals_t p1;
     FILE *pirddr,*gledddr,*rledddr,*motorout1ddr,*motorout2ddr;
