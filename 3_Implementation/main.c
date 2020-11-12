@@ -1,21 +1,23 @@
-#include <peripheralinitializer.h>
-#include <medstime.h>
+#include "peripheralinitializer.h"
+#include "medstime.h"
 
 int main()
 {
 	int MED_FLAG=0;
 	int PIR_FLAG=0;
-    struct peripherals_t periph;
+	peripheralddrinit();
+    	struct peripherals_t periph;
 	while(1)
 	{
 		int med_number;
+		periph=peripheralinit();
 		med_number=medstime();
 		if(med_number>0 && MED_FLAG==0)
 		{
 			MED_FLAG=1;
-			SPI_transmit();
+			//SPI_transmit(med_number);
 		}
-        fscanf(pirin,"%d",&pir_val);
+        	fscanf(pirin,"%d",&pir_val);
 		if(MED_FLAG)
 		{	
 			while(PIR_FLAG==0)
