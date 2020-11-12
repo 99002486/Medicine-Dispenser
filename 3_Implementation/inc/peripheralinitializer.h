@@ -18,4 +18,6 @@ int peripheral_setout(FILE* peripheral_ddr);
 
 int peripheral_setin(FILE* peripheral_ddr);
 
+int peripheralddrinit(void);
+
 #endif 
