@@ -4,13 +4,6 @@
 peripherals_t peripheralinit(void)
 {
     peripherals_t p1;
-    FILE *pirddr,*gledddr,*rledddr,*motorout1ddr,*motorout2ddr;
-    pirddr=fopen("/sys/class/gpio/gpio60/direction","w");
-    gledddr=fopen("/sys/class/gpio/gpio48/direction","w");
-    rledddr=fopen("/sys/class/gpio/gpio49/direction","w");
-    motorout1ddr=fopen("/sys/class/gpio/gpio44/direction","w");
-    motorout2ddr=fopen("/sys/class/gpio/gpio26/direction","w");
-
     peripheral_setin(pirddr);
     peripheral_setout(gledddr);
     peripheral_setout(rledddr);
@@ -24,6 +17,23 @@ peripherals_t peripheralinit(void)
     p1.motorout2=fopen("/sys/class/gpio/gpio26/value","w");
 
     return p1;
+}
+
+int peripheralddrinit(void)
+{
+    FILE *pirddr,*gledddr,*rledddr,*motorout1ddr,*motorout2ddr;
+    pirddr=fopen("/sys/class/gpio/gpio60/direction","w");
+    gledddr=fopen("/sys/class/gpio/gpio48/direction","w");
+    rledddr=fopen("/sys/class/gpio/gpio49/direction","w");
+    motorout1ddr=fopen("/sys/class/gpio/gpio44/direction","w");
+    motorout2ddr=fopen("/sys/class/gpio/gpio26/direction","w");
+
+    peripheral_setin(pirddr);
+    peripheral_setout(gledddr);
+    peripheral_setout(rledddr);
+    peripheral_setout(motorout1ddr);
+    peripheral_setout(motorout2ddr);
+    return 0;
 }
 
 int peripheral_setin(FILE* peripheral_ddr)
