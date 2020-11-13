@@ -1,6 +1,7 @@
 #include "peripheralinitializer.h"
 #include "medstime.h"
 #include "mydelay.h"
+#include "myspi.h"
 /**Main function**/
 int main()
 {
@@ -19,7 +20,7 @@ int main()
 		if(med_number>0 && MED_FLAG==0)				//Checking whether the medicine number is received 				
 		{
 			MED_FLAG=1;					//Setting the MED_FLAG once the medicine number is received
-			//SPI_transmit(med_number);
+			SPI_transmit(med_number);
 		}
         	fscanf(periph.pir,"%d",&pir_val);				//Checking for PIR value
 		if(MED_FLAG)
