@@ -2,7 +2,9 @@
 #define __PERIPHERALINITIALIZER_H_
 
 #include <stdio.h>
-
+/**
+Struct- Consists file pointers pointing to each GPIO file
+**/
 typedef struct peripherals
 {
     FILE* pir;
