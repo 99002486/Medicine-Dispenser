@@ -12,7 +12,7 @@ int main()
 	{
 		int med_number;						//Variable to fetch the medicine number
 		periph=peripheralinit();				//Initializes all the peripherals
-		med_number=medstime();					//Fetching the medicine number from csv file
+		med_number=medCheck();					//Fetching the medicine number from csv file
 		delay(1);
 		printf("medicine number = %d\n",med_number);		//Printing the received medicine number
 		if(med_number>0 && MED_FLAG==0)				//Checking whether the medicine number is received 				
