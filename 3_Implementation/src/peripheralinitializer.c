@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include "peripheralinitializer.h"
-
+/**
+@function-peripheralinit
+@param-void
+@return-peripherals_t, peripheral handling structure
+@description - Opens all the respective files for all the peripherals needed and returns a structure with all the file pointers
+**/
 peripherals_t peripheralinit(void)
 {
-    peripherals_t p1;
-    peripheral_setin(pirddr);
-    peripheral_setout(gledddr);
-    peripheral_setout(rledddr);
-    peripheral_setout(motorout1ddr);
-    peripheral_setout(motorout2ddr);
 
     p1.pir=fopen("/sys/class/gpio/gpio60/value","r");
     p1.gled=fopen("/sys/class/gpio/gpio48/value","w");
@@ -18,7 +17,12 @@ peripherals_t peripheralinit(void)
 
     return p1;
 }
-
+/**
+@function-peripheralddrinit
+@param-void
+@return-int
+@description - Sets the direction for all the GPIO pins needed to be used.
+**/
 int peripheralddrinit(void)
 {
     FILE *pirddr,*gledddr,*rledddr,*motorout1ddr,*motorout2ddr;
@@ -35,6 +39,12 @@ int peripheralddrinit(void)
     peripheral_setout(motorout2ddr);
     return 0;
 }
+/**
+@function-peripheral_setin
+@param-FILE* peripheral_ddr, file pointer to the direction file of GPIO pin 
+@return-int
+@description - Sets the direction of the GPIO as input
+**/
 
 int peripheral_setin(FILE* peripheral_ddr)
 {
@@ -44,6 +54,12 @@ int peripheral_setin(FILE* peripheral_ddr)
     fclose(peripheral_ddr);
     return 0;
 }
+/**
+@function-peripheral_setin
+@param-FILE* peripheral_ddr, file pointer to the direction file of GPIO pin 
+@return-int
+@description - Sets the direction of the GPIO as output
+**/
 
 int peripheral_setout(FILE* peripheral_ddr)
 {
