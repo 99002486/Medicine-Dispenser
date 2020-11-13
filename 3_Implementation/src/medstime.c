@@ -37,7 +37,7 @@ int medCheck(void)
         }        
         else if(mednum[i]==2)
         {
-            med=2;where to document the code
+            med=2;
             break;
         }
         else if(mednum[i]==3)
