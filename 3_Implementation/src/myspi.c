@@ -144,7 +144,7 @@ int SPI_transmit(int med_num)
 	int ret = 0;
 	int fd;
 
-	parse_opts(argc, argv);
+	//parse_opts(argc, argv);
 
 	fd = open(device, O_RDWR);
 	if (fd < 0)
