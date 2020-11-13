@@ -8,6 +8,7 @@ int main()
 	int PIR_FLAG=0;							//Flag for executing functionalities if pir has value high
 	peripheralddrinit();						//Initializes direction of every peripheral
     	peripherals_t periph;						//Initializes peripheral handler structure
+	volatile int pir_val;
 	while(1)
 	{
 		int med_number;						//Variable to fetch the medicine number
@@ -20,7 +21,7 @@ int main()
 			MED_FLAG=1;					//Setting the MED_FLAG once the medicine number is received
 			//SPI_transmit(med_number);
 		}
-        	fscanf(pirin,"%d",&pir_val);				//Checking for PIR value
+        	fscanf(periph.pir,"%d",&pir_val);				//Checking for PIR value
 		if(MED_FLAG)
 		{	
 			while(PIR_FLAG==0)
