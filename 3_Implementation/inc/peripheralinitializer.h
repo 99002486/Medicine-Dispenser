@@ -21,7 +21,7 @@ typedef struct peripherals
 @description - Opens all the respective files for all the peripherals needed and returns a structure with all the file pointers
 **/
 
-peripherals_t peripheralsinit(void);
+peripherals_t peripheralinit(void);
 
 /**
 @function-peripheral_setin
