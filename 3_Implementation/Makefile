@@ -1,6 +1,7 @@
 SRC = main.c \
 	src/peripheralinitializer.c \
-	src/medstime.c
+	src/medstime.c \
+	src/mydelay.c
 
 INC = -Iinc
 
