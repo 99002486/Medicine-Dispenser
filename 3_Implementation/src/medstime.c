@@ -10,8 +10,9 @@ int medCheck(void)
     int mednum[10];
     struct tm* local; 
     time_t t = time(NULL);    
-    local = localtime(&t);                  // local system time fetch 
+    local = localtime(&t);                      // local system time fetch 
     strcpy(datetim,asctime(local));
+    printf("Current Time: %s\n",datetim);
     for(int i=0;i<5;i++)
     {
        tim[i]=datetim[j];
@@ -21,13 +22,13 @@ int medCheck(void)
     while(fgets(buff, 1024, (FILE*)fp) != NULL)
     { 
         count++;  
-        if(count>1)                         //to avoid the first row
+        if(count>1)                             //to avoid the first row
         {
-            mednum[k]=getData(buff,tim);    
+            mednum[k]=readCSVData(buff,tim);    
     	}
         k++;
     }
-    for(int i=0;i<10;i++)                   //to identify the medicine number
+    for(int i=0;i<10;i++)                       //to identify the medicine number
     {
         if(mednum[i]==1)
         {
@@ -36,7 +37,7 @@ int medCheck(void)
         }        
         else if(mednum[i]==2)
         {
-            med=2;
+            med=2;where to document the code
             break;
         }
         else if(mednum[i]==3)
@@ -73,7 +74,7 @@ int readCSVData(char buff[],char tim[])
             ///printf("Success\n");
             med_asc=(int)*cell[1];
             //printf("%d\n",med_asc);
-            med_num=med_asc-48;                         //ASCII value to integer
+            med_num=med_asc-48;               //ASCII value to integer
             break;                       
         }
         i++;
