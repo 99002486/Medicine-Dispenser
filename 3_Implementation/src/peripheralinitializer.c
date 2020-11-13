@@ -3,6 +3,7 @@
 
 peripherals_t peripheralinit(void)
 {
+    peripherals_t p1;
 
     p1.pir=fopen("/sys/class/gpio/gpio60/value","r");
     p1.gled=fopen("/sys/class/gpio/gpio48/value","w");
