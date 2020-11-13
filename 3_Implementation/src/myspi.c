@@ -14,7 +14,7 @@
  *
  * Cross-compile with cross-gcc -I/path/to/cross-kernel/include
  */
-
+#include "myspi.h"
 
 static void pabort(const char *s)
 {
