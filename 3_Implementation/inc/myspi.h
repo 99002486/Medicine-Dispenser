@@ -1,5 +1,6 @@
-#ifndef __MYSPI_H
-#define __MYSPI_H
+#ifndef __MYSPI_H_
+#define __MYSPI_H_
+
 #include <stdint.h>
 #include <unistd.h>
 #include <stdio.h>
