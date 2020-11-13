@@ -7,7 +7,7 @@ int main()
 	int MED_FLAG=0;							//Flag for executing functionalities if medicine time is a match
 	int PIR_FLAG=0;							//Flag for executing functionalities if pir has value high
 	peripheralddrinit();						//Initializes direction of every peripheral
-    	struct peripherals_t periph;					//Initializes peripheral handler structure
+    	peripherals_t periph;						//Initializes peripheral handler structure
 	while(1)
 	{
 		int med_number;						//Variable to fetch the medicine number
