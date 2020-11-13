@@ -19,7 +19,7 @@ static void parse_opts(int argc, char *argv[]);
 
 static void print_usage(const char *prog);
 
-static void transfer(int fd,int med_num);
+static void transfer(int fd,uint8_t med_num);
 
 int SPI_transmit(int med_num);
 #endif
