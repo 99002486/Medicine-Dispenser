@@ -40,24 +40,24 @@ int main()
 				}
 			}
 
-		    fprintf(periph.gled, "%d",1);			
-		    fflush(periph.gled);				//Turning on Green LED to indicate the dispensing of medicine
-		    delay(2);
-		    //fprintf(p1.gled, %d,0);
-		    //fflush(p1.gled);
-		    //delay(2);
-		    fprintf(periph.motorout1,"%d",1);			//Turning on Motor 		
-		    fflush(periph.motorout1);				//Giving high value to IN1 pin of motor driver
-		    fprintf(periph.motorout2,"%d",0);
-		    fflush(periph.motorout2);				//Giving low value to IN2 pin of motor driver
-		    delay(2);
-		    fprintf(periph.motorout1,"%d",0);			//Turning off Motor
-		    fflush(periph.motorout1);				//Giving low value to IN1 pin of motor driver
-		    fprintf(periph.motorout2,"%d",0);			
-		    fflush(periph.motorout2);				//Giving low value to IN2 pin of motor driver
-		    fprintf(periph.gled, "%d",0);			
-		    fflush(periph.gled);				//Turning off green LED once the dispensing of medicine is complete
-		    delay(2);
+		    	fprintf(periph.gled, "%d",1);			
+		    	fflush(periph.gled);				//Turning on Green LED to indicate the dispensing of medicine
+		    	delay(2);
+		   	 //fprintf(p1.gled, %d,0);
+		    	//fflush(p1.gled);
+		    	//delay(2);
+		    	fprintf(periph.motorout1,"%d",1);			//Turning on Motor 		
+		    	fflush(periph.motorout1);				//Giving high value to IN1 pin of motor driver
+		    	fprintf(periph.motorout2,"%d",0);
+		    	fflush(periph.motorout2);				//Giving low value to IN2 pin of motor driver
+		    	delay(2);
+		    	fprintf(periph.motorout1,"%d",0);			//Turning off Motor
+		    	fflush(periph.motorout1);				//Giving low value to IN1 pin of motor driver
+		    	fprintf(periph.motorout2,"%d",0);			
+		    	fflush(periph.motorout2);				//Giving low value to IN2 pin of motor driver
+		    	fprintf(periph.gled, "%d",0);			
+		    	fflush(periph.gled);				//Turning off green LED once the dispensing of medicine is complete
+		    	delay(2);
         	}
         	PIR_FLAG=0;
         	MED_FLAG=0;
